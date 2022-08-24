@@ -15,10 +15,11 @@ Button {
         qmlPromises.userAbort();
         qmlPromises.asyncToGenerator( function * () {
             let startTime = Date.now();
+            let portalUrl = "https://www.arcgis.com";
             let start = 1;
             while (start >= 1) {
                 let search = yield qmlPromises.fetch( {
-                    "url": `https://www.arcgis.com/sharing/rest/search`,
+                    "url": `${portalUrl}/sharing/rest/search`,
                     "body": {
                         "q": "type:native application",
                         "start": start,
