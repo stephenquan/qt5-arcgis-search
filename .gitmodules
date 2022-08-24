@@ -1,0 +1,9 @@
+[submodule "qt5-qml-promises"]
+	path = qt5-qml-promises
+	url = https://github.com/stephenquan/qt5-qml-promises.git
+[submodule "qt5-qml-sortmodel"]
+	path = qt5-qml-sortmodel
+	url = https://github.com/stephenquan/qt5-qml-sortlistmodel.git
+[submodule "qt5-qml-sortlistmodel"]
+	path = qt5-qml-sortlistmodel
+	url = https://github.com/stephenquan/qt5-qml-sortlistmodel.git
