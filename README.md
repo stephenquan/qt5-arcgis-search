@@ -35,3 +35,9 @@ Button {
 This application uses the following Qt5 QML submodule libraries:
  - https://github.com/stephenquan/qt5-qml-promises
  - https://github.com/stephenquan/qt5-qml-sortlistmodel
+
+To clone this repo, use:
+
+    git clone https://github.com/stephenquan/qt5-arcgis-search.git
+    git submodule update
+
