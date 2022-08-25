@@ -80,8 +80,9 @@ Window {
                     font.pointSize: 12
 
                     onClicked: {
-                        qmlPromises.userAbort();
                         qmlPromises.asyncToGenerator( function * () {
+                            yield qmlPromises.abortIfRunning();
+                            yield qmlPromises.start();
                             itemsListModel.clear();
                             let portalUrl = "https://www.arcgis.com";
                             let start = 1;
@@ -104,6 +105,7 @@ Window {
                                 if (search.response.nextStart === -1) { break; }
                                 start = search.response.nextStart;
                             }
+                            yield qmlPromises.finish();
                         } )();
                     }
                 }
@@ -133,10 +135,10 @@ Window {
                 }
 
                 Button {
-                    text: qsTr("User Abort")
+                    text: qsTr("Abort")
 
                     onClicked: {
-                        qmlPromises.userAbort();
+                        qmlPromises.abort();
                     }
                 }
             }

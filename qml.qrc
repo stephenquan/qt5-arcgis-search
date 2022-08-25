@@ -5,6 +5,7 @@
         <file>qt5-qml-promises/QMLPromises.qml</file>
         <file>qt5-qml-promises/NumberAnimationPromiseComponent.qml</file>
         <file>qt5-qml-promises/SleepPromiseComponent.qml</file>
+        <file>qt5-qml-promises/WaitUntilPromiseComponent.qml</file>
         <file>qt5-qml-sortlistmodel/SortListModel.qml</file>
     </qresource>
 </RCC>
