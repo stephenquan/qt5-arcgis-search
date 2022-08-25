@@ -10,19 +10,22 @@ Button {
     onClicked: {
         qmlPromises.userAbort();
         qmlPromises.asyncToGenerator( function * () {
-            let startTime = Date.now();
+            let portalUrl = "https://www.arcgis.com";
             let start = 1;
             while (start >= 1) {
                 let search = yield qmlPromises.fetch( {
-                    "url": `https://www.arcgis.com/sharing/rest/search`,
+                    "method": "POST",
+                    "url": `${portalUrl}/sharing/rest/search`,
                     "body": {
                         "q": "type:native application",
                         "start": start,
                         "num": 100,
                         "f": "pjson"
+                    },
+                    "headers": {
+                        "Content-type": "application/x-www-form-urlencoded"
                     }
                 } );
-                if (qmlPromises.userAbortTime > startTime) { throw new Error("User Abort"); }
                 console.log("start:", start, "results: ", search.response.results.length, "nextStart: ", search.response.nextStart);
                 if (search.response.nextStart === -1) { break; }
                 start = search.response.nextStart;
