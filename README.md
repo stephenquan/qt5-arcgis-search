@@ -1,8 +1,12 @@
 # qt5-arcgis-search
 Qt5 application demonstrating ArcGIS Online Search API
 
-The made search uses generator function with yield syntax which
-was transpiled from async function with await syntax:
+Each call to the ArcGIS Online Search API is wrapped in a JavaScript Promise.
+A Promise chain is used to iterate through the search result.
+
+We make use of generator/yield functions approximating async/await functions.
+
+This make use of a asyncToGenerator() function from a babeljs transpiler.
 
 ```qml
 Button {
